@@ -1,6 +1,6 @@
 <?php
 
-    $nome = $_POST["nome"];
+    $nome = trataNome($_POST["nome"]);
     $email = $_POST["email"];
     $idade = $_POST["idade"];
 
@@ -11,7 +11,10 @@
     }else{
         echo "Por favor, preencha os campos obrigatórios!";
     }
+function trataNome ($nome){
+    $nomeTratado = ucwords(strtolower($nome));
+    return $nomeTratado; }
+     
 ?>
-
 <br>
 <a href="index.php">Voltar</a>
